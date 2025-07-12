@@ -1,0 +1,36 @@
+.header {
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: calc(var(--sidebar-width) / 5);
+  padding-left: calc(var(--sidebar-width) / 5);
+  background-color: var(--color-surface);
+}
+
+.nav {
+  width: 70px;
+  height: 35px;
+  border-radius: 100px;
+  background-color: var(--color-bg);
+}
+
+.search {
+  width: 500px;
+  height: 35px;
+  color: var(--color-placeholder);
+  border-radius: 100px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-30%);
+  background-color: var(--color-surface);
+  background-color: var(--color-bg);
+}
+
+.logo {
+  width: 70px;
+  height: 100%;
+}

@@ -1,0 +1,14 @@
+.root-container {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header"
+    "sidebar content";
+}
+
+.content {
+  grid-area: content;
+  overflow-y: auto;
+  min-height: 0;
+}

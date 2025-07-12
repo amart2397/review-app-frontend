@@ -1,13 +1,13 @@
 .review-card {
   display: grid;
-  grid-template-columns: 200px 800px;
+  grid-template-columns: 200px 900px;
   grid-template-rows: auto;
   grid-template-areas:
     "img header"
     "img content"
     "img footer";
   gap: 1rem;
-  border-bottom: 1px solid var(--color-text);
+  border-bottom: 1px solid var(--color-secondary);
   padding: 1rem 0;
 }
 
@@ -53,5 +53,5 @@
 .review-rating {
   font-weight: 700;
   color: #e0e0e0;
-  font-size: 1.5rem; /* Bigger */
+  font-size: 1.5rem;
 }

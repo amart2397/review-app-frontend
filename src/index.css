@@ -1,11 +1,13 @@
 :root {
-  --color-bg: #2b3330;
-  --color-primary: #f4a261;
-  --color-secondary: #a3b18a;
-  --color-surface: #3a4441;
-  --color-text: #f8f9fa;
+  --color-bg: rgba(43, 51, 48);
+  --color-primary: rgba(244, 162, 97);
+  --color-secondary: rgba(163, 177, 138);
+  --color-surface: rgba(58, 68, 65, 0.9);
+  --color-text: rgba(248, 249, 250);
+  --color-placeholder: rgba(248, 249, 250, 0.5);
+  --header-height: 50px;
+  --sidebar-width: 250px;
 }
-
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -20,6 +22,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#root {
+  height: 100%;
+}
 
 html,
 body {
@@ -29,10 +34,27 @@ body {
   height: 100%;
 }
 
-#root {
-  height: 100%;
+/*Utility Classes*/
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/*
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -65,16 +87,4 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+*/

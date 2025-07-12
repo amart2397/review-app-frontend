@@ -1,0 +1,11 @@
+.sidebar {
+  overflow-y: auto;
+  grid-area: sidebar;
+  position: sticky;
+  top: var(--header-height);
+  height: calc(100vh - var(--header-height));
+  width: var(--sidebar-width);
+  padding: 0;
+  margin: 0;
+  background-color: var(--color-surface);
+}
