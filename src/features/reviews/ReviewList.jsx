@@ -12,7 +12,6 @@ const ReviewList = () => {
     return <span>Error: {error.message}</span>
   }
 
-  console.log(data)
   return (
     <div className={styles["review-list"]}>
       {data?.map((review) => (

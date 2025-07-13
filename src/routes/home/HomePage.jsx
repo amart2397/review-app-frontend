@@ -1,5 +1,5 @@
-import ReviewList from "../features/reviews/ReviewList"
-import styles from "./Home.module.css"
+import ReviewList from "../../features/reviews/ReviewList"
+import styles from "./HomePage.module.css"
 
 const HomePage = () => {
   return (

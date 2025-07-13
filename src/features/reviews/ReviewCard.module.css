@@ -1,6 +1,6 @@
 .review-card {
   display: grid;
-  grid-template-columns: 200px 900px;
+  grid-template-columns: var(--review-img-width-lg) var(--review-text-width-lg);
   grid-template-rows: auto;
   grid-template-areas:
     "img header"

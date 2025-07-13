@@ -3,6 +3,9 @@ class ReviewsAPI {
     this.baseUrl = baseUrl
   }
 
+  // @desc Retrieve all reviews
+  // @route GET /reviews
+  // @access Public
   getAllReviews = async () => {
     const res = await fetch(`${this.baseUrl}/reviews`)
     if (!res.ok) throw new Error("Failed to fetch reviews")

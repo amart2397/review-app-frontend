@@ -1,11 +1,16 @@
+import { Link } from "react-router-dom"
 import styles from "./Header.module.css"
 
 const Header = () => {
   return (
     <div className={styles.header}>
-      <div className={`${styles.logo} flex-center surface`}>R8R Logo</div>
+      <Link to="/">
+        <div className={`${styles.logo} flex-center surface`}>R8R Logo</div>
+      </Link>
       <search className={`${styles.search} flex-center surface`}>search</search>
-      <nav className={`${styles.nav} flex-center surface`}>Login</nav>
+      <Link to="/auth/login">
+        <nav className={`${styles.nav} flex-center surface`}>Login</nav>
+      </Link>
     </div>
   )
 }
