@@ -22,6 +22,25 @@ class AuthAPI {
     return
   }
 
+  // @desc Login user with email and password
+  // @route POST /auth/login
+  // @access Public
+  logout = async (csrfToken) => {
+    const res = await fetch(`${this.baseUrl}/auth/logout`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-csrf-token": csrfToken,
+      },
+      credentials: "include",
+    })
+    if (!res.ok) {
+      const errData = await res.json().catch(() => null)
+      throw new Error(errData?.message || "Login Failed")
+    }
+    return
+  }
+
   // @desc   Get current user info (after acquiring CSRF token)
   // @api    GET /api/auth/me
   // @csrf   Required (fetched and stored first)

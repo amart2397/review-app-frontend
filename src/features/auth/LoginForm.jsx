@@ -73,7 +73,7 @@ const LoginForm = ({ onLoginSuccess }) => {
             required
           />
         </div>
-        <button className={styles.button}>LOGIN</button>
+        <button className={`${styles.button} std-button`}>LOGIN</button>
       </form>
     </>
   )
