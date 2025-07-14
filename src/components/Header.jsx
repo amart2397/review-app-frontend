@@ -1,17 +1,12 @@
 import { Link } from "react-router-dom"
 import styles from "./Header.module.css"
 import LogoutButton from "../features/auth/LogoutButton"
+import LoginButton from "../features/auth/LoginButton"
 import { useAppStore } from "../stores/useAppStore"
 
 const Header = () => {
   const user = useAppStore((state) => state.user)
-  const authButton = !user ? (
-    <Link to="/auth/login" className={`header-button flex-center surface`}>
-      Login
-    </Link>
-  ) : (
-    <LogoutButton />
-  )
+  const authButton = !user ? <LoginButton /> : <LogoutButton />
 
   return (
     <div className={styles.header}>

@@ -25,6 +25,7 @@
   flex-direction: column;
   width: 70%;
   gap: 0.5rem;
+  position: relative;
 }
 
 .label {
@@ -43,4 +44,18 @@
   width: 70%;
   margin-bottom: 0.75rem;
   margin-top: 0.5rem;
+}
+
+.error-popup {
+  position: absolute;
+  background: #f44336;
+  left: 30%;
+  color: white;
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+  font-size: 0.875em;
+  margin-top: 4px;
+  z-index: 10;
+  white-space: nowrap;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }

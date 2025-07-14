@@ -38,14 +38,28 @@ const LoginForm = ({ onLoginSuccess }) => {
 
   if (loading) return <p>Loading...</p>
 
-  const errDisplay = error ? <p aria-live="assertive">{error}</p> : null
+  const errDisplay = error
+    ? {
+        position: error === "Incorrect Password" ? "password" : "email",
+        content: (
+          <div
+            id="error"
+            role="alert"
+            className={styles["error-popup"]}
+            aria-live="assertive"
+          >
+            {error}
+          </div>
+        ),
+      }
+    : null
 
   const form = (
     <>
-      {errDisplay}
       <form className={styles["login-form"]} onSubmit={handleSubmit}>
         <h2 className={styles.title}>Login</h2>
         <div className={styles.email}>
+          {errDisplay?.position === "email" ? errDisplay?.content : null}
           <label className={styles.label} htmlFor="email">
             Email:
           </label>
@@ -61,6 +75,7 @@ const LoginForm = ({ onLoginSuccess }) => {
           />
         </div>
         <div className={styles.password}>
+          {errDisplay?.position === "password" ? errDisplay?.content : null}
           <label htmlFor="password" className={styles.label}>
             Password:
           </label>

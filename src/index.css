@@ -78,6 +78,10 @@ a:hover {
   text-decoration: inherit;
 }
 
+.page {
+  min-height: calc(100vh - var(--header-height));
+}
+
 .flex-center {
   display: flex;
   align-items: center;

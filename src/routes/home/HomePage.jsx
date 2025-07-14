@@ -3,7 +3,7 @@ import styles from "./HomePage.module.css"
 
 const HomePage = () => {
   return (
-    <div className={`${styles.page} flex-center`}>
+    <div className={`${styles.page} page flex-center`}>
       <ReviewList />
     </div>
   )
