@@ -8,6 +8,7 @@
   --color-primary-hover: rgba(248, 118, 102, 0.7);
   --header-height: 50px;
   --sidebar-width: 250px;
+  --total-max-width: 2560px;
   --review-text-width-lg: 900px;
   --review-img-width-lg: 200px;
 }
@@ -79,7 +80,9 @@ a:hover {
 }
 
 .page {
-  min-height: calc(100vh - var(--header-height));
+  min-height: 100%;
+  max-width: var(--total-max-width);
+  width: 100%;
 }
 
 .flex-center {

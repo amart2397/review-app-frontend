@@ -1,5 +1,6 @@
 .login-form {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   background-color: var(--color-surface);
   border-radius: 5px;
   display: flex;
@@ -9,6 +10,7 @@
   border: solid 1px var(--color-secondary);
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  margin-top: 10vh;
 }
 
 .title {

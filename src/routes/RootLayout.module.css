@@ -1,14 +1,19 @@
 .root-container {
   display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr;
-  grid-template-rows: auto;
+  overflow-y: auto;
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: var(--header-height) 1fr;
   grid-template-areas:
     "header header"
     "content content";
 }
 
 .content {
+  padding-top: var(--header-height);
   grid-area: content;
-  overflow-y: auto;
   min-height: 0;
+  max-width: var(--total-max-width); /* <-- this line and the next*/
+  width: 100%;
+  margin: 0 auto;
 }

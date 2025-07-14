@@ -9,12 +9,16 @@ const Header = () => {
   const authButton = !user ? <LoginButton /> : <LogoutButton />
 
   return (
-    <div className={styles.header}>
-      <Link to="/">
-        <div className={`${styles.logo} flex-center surface`}>R8R Logo</div>
-      </Link>
-      <search className={`${styles.search} flex-center surface`}>search</search>
-      {authButton}
+    <div className={`${styles.header} flex-center`}>
+      <div className={styles["header-content"]}>
+        <Link to="/">
+          <div className={`${styles.logo} flex-center surface`}>R8R Logo</div>
+        </Link>
+        <search className={`${styles.search} flex-center surface`}>
+          search
+        </search>
+        {authButton}
+      </div>
     </div>
   )
 }
