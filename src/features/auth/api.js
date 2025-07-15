@@ -22,9 +22,9 @@ class AuthAPI {
     return
   }
 
-  // @desc Login user with email and password
-  // @route POST /auth/login
-  // @access Public
+  // @desc Logout user
+  // @route POST /auth/logout
+  // @access Private
   logout = async (csrfToken) => {
     const res = await fetch(`${this.baseUrl}/auth/logout`, {
       method: "POST",
@@ -32,6 +32,25 @@ class AuthAPI {
         "Content-Type": "application/json",
         "x-csrf-token": csrfToken,
       },
+      credentials: "include",
+    })
+    if (!res.ok) {
+      const errData = await res.json().catch(() => null)
+      throw new Error(errData?.message || "Login Failed")
+    }
+    return
+  }
+
+  // @desc Register new user with email and password
+  // @route POST /auth/register
+  // @access Public
+  register = async (firstName, lastName, email, password) => {
+    const res = await fetch(`${this.baseUrl}/auth/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ firstName, lastName, email, password }),
       credentials: "include",
     })
     if (!res.ok) {

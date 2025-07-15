@@ -3,10 +3,17 @@ import styles from "./Header.module.css"
 import LogoutButton from "../features/auth/LogoutButton"
 import LoginButton from "../features/auth/LoginButton"
 import { useAppStore } from "../stores/useAppStore"
+import RegisterButton from "../features/auth/RegisterButton"
 
 const Header = () => {
   const user = useAppStore((state) => state.user)
-  const authButton = !user ? <LoginButton /> : <LogoutButton />
+  const authButton = !user ? (
+    <div className={styles.buttons}>
+      <LoginButton /> <RegisterButton />
+    </div>
+  ) : (
+    <LogoutButton />
+  )
 
   return (
     <div className={`${styles.header} flex-center`}>

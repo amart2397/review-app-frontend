@@ -25,6 +25,11 @@
   height: 100%;
 }
 
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
 .header-content {
   height: 100%;
   max-width: var(--total-max-width);

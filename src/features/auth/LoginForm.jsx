@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react"
 import AuthAPI from "./api.js"
-import styles from "./LoginForm.module.css"
+import styles from "./AuthForm.module.css"
 
 const LoginForm = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState("")
@@ -56,7 +56,7 @@ const LoginForm = ({ onLoginSuccess }) => {
 
   const form = (
     <>
-      <form className={styles["login-form"]} onSubmit={handleSubmit}>
+      <form className={styles["user-form"]} onSubmit={handleSubmit}>
         <h2 className={styles.title}>Login</h2>
         <div className={styles.email}>
           {errDisplay?.position === "email" ? errDisplay?.content : null}
