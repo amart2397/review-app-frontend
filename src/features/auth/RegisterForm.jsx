@@ -77,90 +77,88 @@ const RegisterForm = ({ onRegisterSuccess }) => {
   if (loading) return <p>Loading...</p>
 
   const form = (
-    <>
-      <form className={styles["user-form"]} onSubmit={handleSubmit}>
-        <h2 className={styles.title}>Register</h2>
-        <div className={styles.name}>
-          <div className={styles["first-name"]}>
-            {errDisplay?.position === "firstName" ? errDisplay?.content : null}
-            <label className={styles.label} htmlFor="given-name">
-              First Name:
-            </label>
-            <input
-              className={styles.input}
-              type="text"
-              id="given-name"
-              ref={userRef}
-              value={firstName}
-              onChange={handleFirstNameInput}
-              autoComplete="name"
-              required
-            />
-          </div>
-          <div className={styles["last-name"]}>
-            {errDisplay?.position === "LastName" ? errDisplay?.content : null}
-            <label className={styles.label} htmlFor="family-name">
-              Last Name:
-            </label>
-            <input
-              className={styles.input}
-              type="text"
-              id="family-name"
-              value={lastName}
-              onChange={handleLastNameInput}
-              autoComplete="name"
-              required
-            />
-          </div>
-        </div>
-        <div className={styles.email}>
-          {errDisplay?.position === "email" ? errDisplay?.content : null}
-          <label className={styles.label} htmlFor="email">
-            Email:
+    <form className={styles["user-form"]} onSubmit={handleSubmit}>
+      <h2 className={styles.title}>Register</h2>
+      <div className={styles.name}>
+        <div className={styles["first-name"]}>
+          {errDisplay?.position === "firstName" ? errDisplay?.content : null}
+          <label className={styles.label} htmlFor="given-name">
+            First Name:
           </label>
           <input
             className={styles.input}
-            type="email"
-            id="email"
-            value={email}
-            onChange={handleEmailInput}
-            autoComplete="off"
+            type="text"
+            id="given-name"
+            ref={userRef}
+            value={firstName}
+            onChange={handleFirstNameInput}
+            autoComplete="name"
             required
           />
         </div>
-        <div className={styles.password}>
-          {errDisplay?.position === "password" ? errDisplay?.content : null}
-          <label htmlFor="password" className={styles.label}>
-            Password:
+        <div className={styles["last-name"]}>
+          {errDisplay?.position === "LastName" ? errDisplay?.content : null}
+          <label className={styles.label} htmlFor="family-name">
+            Last Name:
           </label>
           <input
             className={styles.input}
-            type="password"
-            id="password"
-            onChange={handlePasswordInput}
-            value={password}
+            type="text"
+            id="family-name"
+            value={lastName}
+            onChange={handleLastNameInput}
+            autoComplete="name"
             required
           />
         </div>
-        <div className={styles.password}>
-          {errDisplay?.position === "confirmPassword"
-            ? errDisplay?.content
-            : null}
-          <label htmlFor="confirmPassword" className={styles.label}>
-            Confirm Password:
-          </label>
-          <input
-            className={styles.input}
-            type="password"
-            id="confirmPassword"
-            onChange={handleConfirmPasswordInput}
-            value={confirmPassword}
-            required
-          />
-        </div>
-        <button className={`${styles.button} std-button`}>REGISTER</button>
-      </form>
-    </>
+      </div>
+      <div className={styles.email}>
+        {errDisplay?.position === "email" ? errDisplay?.content : null}
+        <label className={styles.label} htmlFor="email">
+          Email:
+        </label>
+        <input
+          className={styles.input}
+          type="email"
+          id="email"
+          value={email}
+          onChange={handleEmailInput}
+          autoComplete="off"
+          required
+        />
+      </div>
+      <div className={styles.password}>
+        {errDisplay?.position === "password" ? errDisplay?.content : null}
+        <label htmlFor="password" className={styles.label}>
+          Password:
+        </label>
+        <input
+          className={styles.input}
+          type="password"
+          id="password"
+          onChange={handlePasswordInput}
+          value={password}
+          required
+        />
+      </div>
+      <div className={styles["confirm-password"]}>
+        {errDisplay?.position === "confirmPassword"
+          ? errDisplay?.content
+          : null}
+        <label htmlFor="confirmPassword" className={styles.label}>
+          Confirm Password:
+        </label>
+        <input
+          className={styles.input}
+          type="password"
+          id="confirmPassword"
+          onChange={handleConfirmPasswordInput}
+          value={confirmPassword}
+          required
+        />
+      </div>
+      <button className={`${styles.button} std-button`}>REGISTER</button>
+    </form>
   )
 
   return form

@@ -55,3 +55,22 @@
   color: #e0e0e0;
   font-size: 1.5rem;
 }
+
+/* For samller screens: phones */
+@media (max-width: 768px) {
+  .review-card {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "img"
+      "header"
+      "content"
+      "footer";
+  }
+
+  .cover-art {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 2 / 3;
+  }
+}

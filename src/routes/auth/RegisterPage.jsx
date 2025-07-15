@@ -17,8 +17,8 @@ const RegisterPage = () => {
   }
 
   return (
-    <div className="page flex-center">
-      <RegisterForm onRegisterSuccess={handleRegister} />{" "}
+    <div className="page flex-top">
+      <RegisterForm onRegisterSuccess={handleRegister} />
     </div>
   )
 }

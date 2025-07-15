@@ -12,7 +12,9 @@ const Header = () => {
       <LoginButton /> <RegisterButton />
     </div>
   ) : (
-    <LogoutButton />
+    <div className={styles.buttons}>
+      <LogoutButton />
+    </div>
   )
 
   return (

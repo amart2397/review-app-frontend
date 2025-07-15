@@ -13,7 +13,7 @@ const LoginPage = () => {
     navigate(from, { replace: true })
   }
   return (
-    <div className={`page flex-center`}>
+    <div className={`page flex-top`}>
       <LoginForm onLoginSuccess={handleLogin} />
     </div>
   )
