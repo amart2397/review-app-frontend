@@ -5,15 +5,19 @@
   grid-template-areas:
     "post-review"
     "review-list";
+  gap: 10px;
 }
 
 .post-review {
   grid-area: post-review;
-  place-self: center;
   min-width: 50%;
   height: 90%;
-  background-color: var(--color-surface);
-  border-radius: 10px;
-  border: 1px solid var(--color-border);
-  box-shadow: 4px 4px 5px -1px var(--color-border);
+}
+
+.review-list {
+  grid-area: review-list;
+  min-width: 50%;
+  padding-left: 2%;
+  padding-right: 2%;
+  box-sizing: border-box;
 }

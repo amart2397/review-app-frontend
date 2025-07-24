@@ -5,10 +5,12 @@ import styles from "./HomePage.module.css"
 const HomePage = () => {
   return (
     <div className={`${styles["home-layout"]} page flex-center`}>
-      <div className={`flex-center ${styles["post-review"]}`}>
+      <div className={`flex-center page-component ${styles["post-review"]}`}>
         <NewReviewButton />
       </div>
-      <ReviewList />
+      <div className={`flex-column page-component ${styles["review-list"]}`}>
+        <ReviewList />
+      </div>
     </div>
   )
 }

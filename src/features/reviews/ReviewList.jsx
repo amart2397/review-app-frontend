@@ -1,5 +1,4 @@
 import ReviewCard from "./ReviewCard"
-import styles from "./ReviewList.module.css"
 import { useReviews } from "./queries.js"
 
 const ReviewList = () => {
@@ -13,11 +12,11 @@ const ReviewList = () => {
   }
 
   return (
-    <div className={styles["review-list"]}>
+    <>
       {data?.map((review) => (
         <ReviewCard data={review} key={review.id} />
       ))}
-    </div>
+    </>
   )
 }
 
