@@ -4,8 +4,8 @@ import BookSearch from "../media-search/BookSearch"
 import MovieSearch from "../media-search/MovieSearch"
 import SelectMedia from "../../components/SelectMedia"
 import { useAppStore } from "../../stores/useAppStore"
-import NewReviewForm from "./NewReviewForm"
 import styles from "./NewReviewButton.module.css"
+import ReviewFormNew from "./ReviewFormNew"
 
 const NewReviewButton = () => {
   const [stage, setStage] = useState("idle")
@@ -47,7 +47,7 @@ const NewReviewButton = () => {
           {showBook && !selectedMedia && <BookSearch />}
           {showMovie && !selectedMedia && <MovieSearch />}
           {selectedMedia && (
-            <NewReviewForm media={selectedMedia} onSuccess={handleClose} />
+            <ReviewFormNew media={selectedMedia} onSuccess={handleClose} />
           )}
         </Modal>
       )}
