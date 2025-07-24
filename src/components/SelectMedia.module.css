@@ -1,0 +1,9 @@
+.media-list {
+  width: 100%;
+  gap: 10px;
+}
+.media-button {
+  width: 50%;
+  border-radius: 5px;
+  font-size: 1.3rem;
+}

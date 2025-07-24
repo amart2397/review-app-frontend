@@ -1,0 +1,100 @@
+.media {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit {
+  height: 5%;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  align-self: center;
+}
+.input-box {
+  background-color: var(--color-surface);
+  border: none;
+  width: 36px;
+  font-size: 0.95rem;
+}
+
+.full-review {
+  gap: 10px;
+  margin-bottom: 20px;
+  height: 100%;
+}
+.title-input {
+  width: 40%;
+}
+.body-input {
+  height: auto;
+  overflow-y: scroll;
+  resize: none;
+  font: inherit;
+  padding: 5px;
+  /* Scrollbar Styling */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--color-secondary) transparent;
+}
+
+.button {
+  width: 50%;
+  align-self: center;
+}
+
+.expand-button {
+  width: 50%;
+  align-self: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+.expand-button:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* For Webkit (Chrome, Edge, Safari) */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 150px;
+  height: 6px;
+  background: #ddd;
+  border-radius: 3px;
+  outline: none;
+}
+
+/* Track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--color-secondary); /* Your desired track color */
+  height: 6px;
+  border-radius: 3px;
+}
+
+/* Thumb (the draggable circle) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--color-secondary); /* Thumb color */
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px; /* Centers thumb with track */
+}

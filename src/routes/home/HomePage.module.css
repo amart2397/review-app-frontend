@@ -1,0 +1,19 @@
+.home-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas:
+    "post-review"
+    "review-list";
+}
+
+.post-review {
+  grid-area: post-review;
+  place-self: center;
+  min-width: 50%;
+  height: 90%;
+  background-color: var(--color-surface);
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  box-shadow: 4px 4px 5px -1px var(--color-border);
+}

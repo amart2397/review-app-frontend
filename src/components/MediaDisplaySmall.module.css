@@ -1,0 +1,32 @@
+.media-data {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  cursor: pointer;
+  padding: 0.4rem 0;
+}
+
+.media-data img {
+  width: 70px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.media-text h3,
+.media-text p {
+  padding: 0;
+  margin: 0;
+}
+
+.media-text h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.media-text p {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
