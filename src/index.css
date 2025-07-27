@@ -103,16 +103,6 @@ a:hover {
   color: var(--color-primary);
 }
 
-.dropdown-option {
-  width: 200px;
-  background-color: var(--color-surface);
-  border: none;
-  height: 30px;
-}
-.dropdown-option:hover {
-  background-color: var(--color-surface-select);
-}
-
 .options-button {
   background-color: transparent;
   border: none;
@@ -126,6 +116,16 @@ a:hover {
 }
 
 .options-button:hover {
+  background-color: var(--color-surface-select);
+}
+
+.dropdown-option {
+  width: 200px;
+  background-color: var(--color-surface);
+  border: none;
+  height: 30px;
+}
+.dropdown-option:hover {
   background-color: var(--color-surface-select);
 }
 
@@ -160,6 +160,19 @@ a:hover {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.no-margins {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
 }
 
 .input {

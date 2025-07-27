@@ -37,3 +37,17 @@ export const useEditReview = (onSuccess) => {
     },
   })
 }
+
+export const useDeleteReview = () => {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: async ({ id }) => {
+      const res = await ReviewsAPI.deleteReview({ id })
+      return res
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["reviews"])
+    },
+  })
+}

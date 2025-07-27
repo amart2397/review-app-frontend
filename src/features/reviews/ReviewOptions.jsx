@@ -2,16 +2,18 @@ import { useRef, useState } from "react"
 import OptionsDropdown from "../../components/OptionsDropdown"
 import ReviewFormEdit from "./ReviewFormEdit"
 import Modal from "../../components/Modal"
+import ConfirmDeleteReview from "./ConfirmDeleteReview"
 
 const ReviewOptions = ({ review, permissions }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [showEditModal, setShowEditModal] = useState(false)
+  const [showDeletePopup, setShowDeletePopup] = useState(false)
   const wrapperRef = useRef(null)
 
   const toggleDropdown = () => setIsOpen((prev) => !prev)
   const closeDropdown = () => setIsOpen(false)
 
-  const handleEditClick = async () => {
+  const handleEditClick = () => {
     setShowEditModal(true)
     closeDropdown()
   }
@@ -19,6 +21,13 @@ const ReviewOptions = ({ review, permissions }) => {
     setShowEditModal(false)
   }
 
+  const handleDeleteClick = () => {
+    setShowDeletePopup(true)
+    closeDropdown()
+  }
+  const handleDeleteClose = () => {
+    setShowDeletePopup(false)
+  }
   const options = (
     <>
       {permissions?.canEdit && (
@@ -28,6 +37,15 @@ const ReviewOptions = ({ review, permissions }) => {
           className="dropdown-option"
         >
           Edit Review
+        </button>
+      )}
+      {permissions?.canDelete && (
+        <button
+          onClick={handleDeleteClick}
+          aria-haspopup="dialog"
+          className="dropdown-option"
+        >
+          Delete Review
         </button>
       )}
     </>
@@ -67,6 +85,12 @@ const ReviewOptions = ({ review, permissions }) => {
             media={review?.media}
           />
         </Modal>
+      )}
+      {showDeletePopup && (
+        <ConfirmDeleteReview
+          onClose={handleDeleteClose}
+          reviewId={review?.id}
+        />
       )}
     </>
   )

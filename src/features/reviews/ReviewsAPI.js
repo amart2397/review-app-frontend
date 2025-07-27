@@ -62,6 +62,32 @@ class ReviewsAPI {
 
     return await res.json()
   }
+
+  // @desc delete existing review
+  // @route DELETE /reviews/:id
+  // @access Private
+  deleteReview = async ({ id }) => {
+    const csrfToken = useAppStore.getState().csrfToken
+
+    const res = await fetch(
+      `${this.baseUrl}/reviews/${encodeURIComponent(id)}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "x-csrf-token": csrfToken,
+        },
+        credentials: "include",
+        body: JSON.stringify({ id }),
+      }
+    )
+    if (!res.ok) {
+      const error = await res.json()
+      throw new Error(error.message || "Failed to delete review")
+    }
+
+    return await res.json()
+  }
 }
 
 export default new ReviewsAPI()

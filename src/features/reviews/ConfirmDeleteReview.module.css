@@ -1,0 +1,8 @@
+.options {
+  gap: 10px;
+}
+
+.confirm,
+.cancel {
+  min-width: 200px;
+}
