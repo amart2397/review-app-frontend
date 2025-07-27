@@ -1,4 +1,4 @@
-import ReviewsAPI from "./api.js"
+import ReviewsAPI from "./ReviewsAPI.js"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 
 export const useReviews = () =>
@@ -12,8 +12,23 @@ export const useSubmitReview = (onSuccess) => {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: async (review) => {
+    mutationFn: async ({ review }) => {
       const res = await ReviewsAPI.submitReview(review)
+      return res
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["reviews"])
+      onSuccess()
+    },
+  })
+}
+
+export const useEditReview = (onSuccess) => {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: async ({ review, id }) => {
+      const res = await ReviewsAPI.editReview({ review, id })
       return res
     },
     onSuccess: () => {

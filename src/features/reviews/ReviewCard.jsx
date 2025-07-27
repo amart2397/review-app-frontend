@@ -1,19 +1,31 @@
+import { useAppStore } from "../../stores/useAppStore"
 import styles from "./ReviewCard.module.css"
+import ReviewOptions from "./ReviewOptions"
+
 const ReviewCard = ({ data }) => {
   const { title, text, rating, author, media } = data
-  const card = (
+  const user = useAppStore((s) => s.user)
+  const permissions = {
+    canEdit: user?.id === author.id,
+    canDelete: user?.id === author.id,
+  }
+
+  return (
     <article className={styles["review-card"]}>
       <img
         className={styles["cover-art"]}
-        src={media?.artUrl}
+        src={media?.artLarge}
         alt="cover art"
       />
 
       <header className={styles["review-header"]}>
-        <h2 className={styles["review-title"]}>{title}</h2>
-        <p className={styles["review-author"]}>
-          by {author.firstName} {author.lastName}
-        </p>
+        <div className={styles["title-group"]}>
+          <h2 className={styles["review-title"]}>{title}</h2>
+          <p className={styles["review-author"]}>
+            by {author.firstName} {author.lastName}
+          </p>
+        </div>
+        <ReviewOptions review={data} permissions={permissions} />
       </header>
 
       <section className={styles["review-content"]}>
@@ -25,7 +37,6 @@ const ReviewCard = ({ data }) => {
       </footer>
     </article>
   )
-  return card
 }
 
 export default ReviewCard

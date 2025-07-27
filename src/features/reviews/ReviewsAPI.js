@@ -14,6 +14,9 @@ class ReviewsAPI {
     return res.json()
   }
 
+  // @desc Submit new review
+  // @route POST /reviews
+  // @access Private
   submitReview = async (review) => {
     const csrfToken = useAppStore.getState().csrfToken
 
@@ -26,6 +29,32 @@ class ReviewsAPI {
       credentials: "include",
       body: JSON.stringify(review),
     })
+    if (!res.ok) {
+      const error = await res.json()
+      throw new Error(error.message || "Failed to submit review")
+    }
+
+    return await res.json()
+  }
+
+  // @desc edit existing review
+  // @route PATCH /reviews/:id
+  // @access Private
+  editReview = async ({ review, id }) => {
+    const csrfToken = useAppStore.getState().csrfToken
+
+    const res = await fetch(
+      `${this.baseUrl}/reviews/${encodeURIComponent(id)}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "x-csrf-token": csrfToken,
+        },
+        credentials: "include",
+        body: JSON.stringify(review),
+      }
+    )
     if (!res.ok) {
       const error = await res.json()
       throw new Error(error.message || "Failed to submit review")

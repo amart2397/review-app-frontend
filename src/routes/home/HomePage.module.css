@@ -20,4 +20,6 @@
   padding-left: 2%;
   padding-right: 2%;
   box-sizing: border-box;
+  place-self: start;
+  justify-self: center;
 }

@@ -4,7 +4,7 @@ const MediaDisplaySmall = ({ data }) => {
   return (
     <div className={styles["media-data"]}>
       <img
-        src={data.imgSmall ? data.imgSmall : "https://picsum.photos/200/300"}
+        src={data.artSmall ? data.artSmall : "https://picsum.photos/200/300"}
         alt="result cover art"
       />
       <div className={styles["media-text"]}>

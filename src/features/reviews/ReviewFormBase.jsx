@@ -5,6 +5,7 @@ import styles from "./ReviewForm.module.css"
 
 const ReviewFormBase = ({
   media,
+  reviewId,
   initialTitle = "",
   initialBody = "",
   initialRating = 0,
@@ -15,7 +16,7 @@ const ReviewFormBase = ({
   submitLabel = "Submit Review",
   mode,
 }) => {
-  const [rating, setRating] = useState(initialRating)
+  const [rating, setRating] = useState(parseFloat(initialRating))
   const [title, setTitle] = useState(initialTitle)
   const [body, setBody] = useState(initialBody)
   const [isExpanded, setIsExpanded] = useState(
@@ -41,12 +42,17 @@ const ReviewFormBase = ({
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    onSubmit({
-      reviewTitle: isExpanded ? title : null,
-      reviewText: isExpanded ? body : null,
-      reviewRating: rating,
-      media,
-    })
+    const payload = {
+      review: {
+        reviewTitle: isExpanded ? title : "",
+        reviewText: isExpanded ? body : "",
+        reviewRating: rating,
+        ...(mode === "edit" ? { mediaId: media.id } : { media }),
+      },
+    }
+    if (mode === "edit") payload.id = reviewId
+    console.log(payload)
+    onSubmit(payload)
   }
 
   const expandSymbol = isExpanded ? "▲" : "▼"

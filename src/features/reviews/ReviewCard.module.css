@@ -9,21 +9,28 @@
   gap: 1rem;
   border-bottom: 1px solid var(--color-secondary);
   padding: 1rem 0;
+  max-width: calc(var(--review-img-width-lg)+var(--review-text-width-lg));
+  overflow-x: hidden;
 }
 
 .cover-art {
-  width: 200px;
-  height: 300px;
+  width: 185px;
+  height: auto;
   object-fit: cover;
   border-radius: 0.5rem;
   grid-area: img;
 }
 
 .review-header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-group {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  grid-area: header;
 }
 
 .review-title {

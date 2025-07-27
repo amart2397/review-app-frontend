@@ -4,7 +4,7 @@ import styles from "./HomePage.module.css"
 
 const HomePage = () => {
   return (
-    <div className={`${styles["home-layout"]} page flex-center`}>
+    <div className={`${styles["home-layout"]} page`}>
       <div className={`flex-center page-component ${styles["post-review"]}`}>
         <NewReviewButton />
       </div>
