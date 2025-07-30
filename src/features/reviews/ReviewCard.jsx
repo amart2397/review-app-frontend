@@ -1,6 +1,6 @@
 import { useAppStore } from "../../stores/useAppStore"
-import styles from "./ReviewCard.module.css"
 import ReviewOptions from "./ReviewOptions"
+import styles from "./ReviewCard.module.css"
 
 const ReviewCard = ({ data }) => {
   const { title, text, rating, author, media } = data
@@ -11,30 +11,36 @@ const ReviewCard = ({ data }) => {
   }
 
   return (
-    <article className={styles["review-card"]}>
+    <article className={styles.card}>
       <img
-        className={styles["cover-art"]}
-        src={media?.artLarge}
-        alt="cover art"
+        className={styles.thumbnail}
+        src={media.artSmall}
+        alt={media.title}
       />
 
-      <header className={styles["review-header"]}>
-        <div className={styles["title-group"]}>
-          <h2 className={styles["review-title"]}>{title}</h2>
-          <p className={styles["review-author"]}>
-            by {author.firstName} {author.lastName}
+      <header className={styles.header}>
+        <div className={styles["media-info"]}>
+          <h2 className={styles["media-title"]}>{media.title}</h2>
+          <p className={styles["media-secondary"]}>
+            {media.mediaType === "book"
+              ? media.authors
+              : media.releaseDate.slice(0, 4)}
           </p>
         </div>
         <ReviewOptions review={data} permissions={permissions} />
       </header>
 
-      <section className={styles["review-content"]}>
-        <p className={styles["review-text"]}>{text}</p>
+      <section className={styles["section-one"]}>
+        <p className={styles.author}>
+          {author.firstName} {author.lastName}
+        </p>
+        <p className={styles.rating}>★ {rating} / 10</p>
       </section>
 
-      <footer className={styles["review-footer"]}>
-        <p className={styles["review-rating"]}>{rating} / 10</p>
-      </footer>
+      <section className={styles["section-two"]}>
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.text}>{text}</p>
+      </section>
     </article>
   )
 }

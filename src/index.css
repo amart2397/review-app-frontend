@@ -18,8 +18,7 @@
   --header-height: 50px;
   --sidebar-width: 250px;
   --total-max-width: 2560px;
-  --review-text-width-lg: 900px;
-  --review-img-width-lg: 200px;
+  --review-width: 1000px;
 
   /* Typography & System */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
