@@ -31,9 +31,7 @@ const ReviewCard = ({ data }) => {
       </header>
 
       <section className={styles["section-one"]}>
-        <p className={styles.author}>
-          {author.firstName} {author.lastName}
-        </p>
+        <p className={styles.author}>{author.displayName}</p>
         <p className={styles.rating}>★ {rating} / 10</p>
       </section>
 

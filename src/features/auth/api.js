@@ -75,7 +75,7 @@ class AuthAPI {
     const { token: csrfToken } = await csrfRes.json()
 
     // Step 2: Fetch the user info, including CSRF token in headers
-    const userRes = await fetch(`${this.baseUrl}/auth/me`, {
+    const userRes = await fetch(`${this.baseUrl}/me`, {
       method: "GET",
       credentials: "include",
       headers: {
